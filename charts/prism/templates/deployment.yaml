@@ -2,6 +2,7 @@ kind: Deployment
 apiVersion: apps/v1
 metadata:
   name: prism-{{ $.Values.service.mode }}-{{ $.Values.service.name }}
+  namespace: {{ .Release.Namespace }}
   annotations:
     {{- toYaml $.Values.deployment.annotations | nindent 4 }}
   labels:
