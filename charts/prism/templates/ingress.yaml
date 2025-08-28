@@ -4,6 +4,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: prism-{{ $.Values.service.mode }}-{{ $.Values.service.name }}
+  namespace: {{ .Release.Namespace }}
   {{- with $ingress.annotations }}
   annotations:
     {{- range $key, $value := . }}
