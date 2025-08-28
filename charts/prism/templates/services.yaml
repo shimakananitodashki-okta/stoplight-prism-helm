@@ -2,6 +2,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: prism-{{ $.Values.service.mode }}-{{ $.Values.service.name }}
+  namespace: {{ .Release.Namespace }}
   labels:
     app.kubernetes.io/name: prism-{{ $.Values.service.mode }}-{{ $.Values.service.name }}
     app.kubernetes.io/instance: prism-{{ $.Values.service.mode }}-{{ $.Values.service.name }}-{{ $.Chart.Version }}
